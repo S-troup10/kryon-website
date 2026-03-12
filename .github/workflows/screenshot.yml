@@ -1,4 +1,4 @@
-name: Capture screenshot
+name: Capture screenshot (Playwright)
 
 on:
   schedule:
@@ -15,14 +15,14 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: true
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-      - name: Install deps
-        run: npm ci
+      - name: Setup Playwright
+        uses: microsoft/playwright-github-action@v1
       - name: Capture screenshot
-        run: npm run screenshot
+        run: |
+          mkdir -p screenshots
+          npx playwright --version
+          npx playwright install --with-deps
+          npx playwright screenshot "https://s-troup10.github.io/kryon-website/" screenshots/$(date -u +'%Y%m%dT%H%M%SZ').png --device="Desktop Chrome"
       - name: Commit screenshot
         run: |
           git config user.name "kryon-bot"
