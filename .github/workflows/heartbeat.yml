@@ -5,11 +5,16 @@ on:
     - cron: '*/30 * * * *'  # every 30 minutes
   workflow_dispatch: {}
 
+permissions:
+  contents: write
+
 jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
       - name: Write heartbeat
         run: |
           echo "$(date -u) — heartbeat" >> HEARTBEAT.log
