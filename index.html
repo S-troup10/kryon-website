@@ -8,55 +8,65 @@
   <link rel="stylesheet" href="styles.v1.css">
   <meta name="description" content="Kryon builds AI workflows that automate repeatable business processes — audits, deployments, and ongoing maintenance." />
   <style>
-    /* critical fallback styles to guarantee visibility */
+    /* critical fallback styles */
     html,body{height:100%}
-    body{background:#fff;color:#0b1220;font-family:Arial,Helvetica,sans-serif}
-    .hero{background:#1a73e8;color:#fff;padding:40px}
-    .wrap{max-width:1100px;margin:0 auto;padding:20px}
-    h1{font-size:32px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:#ff5a5f;color:#fff;text-decoration:none}
+    body{background:#fff;color:#0b1220;font-family:Inter,Arial,Helvetica,sans-serif}
   </style>
 </head>
 <body>
+  <nav class="nav">
+    <div class="wrap nav-row">
+      <div class="logo">Kryon</div>
+      <div class="nav-links"><a href="#features">Product</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a></div>
+    </div>
+  </nav>
+
   <header class="hero">
-    <div class="wrap">
-      <div class="hero-content">
-        <h1>Replace manual work with high-ROI AI workflows</h1>
-        <p class="lead">Audit, deploy and run automation that saves hours every week — we handle strategy, build, and handover.</p>
+    <div class="wrap hero-grid">
+      <div class="hero-left">
+        <h1>Replace manual work with AI workflows that actually run</h1>
+        <p class="lead">We audit, build and maintain production automations that cut weeks of work — shipped fast, monitored, and improved weekly.</p>
         <div class="hero-cta">
           <a class="btn primary" href="#contact">Book a call</a>
-          <a class="btn ghost" href="#pricing">View pricing</a>
+          <a class="btn ghost" href="#pricing">See pricing</a>
         </div>
+        <ul class="trust">
+          <li><strong>Fast</strong> 1-week audits</li>
+          <li><strong>Reliable</strong> production-grade</li>
+          <li><strong>Maintainable</strong> weekly improvements</li>
+        </ul>
       </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="card">Example workflow preview</div>
+      <div class="hero-right">
+        <div class="mock-card">
+          <div class="mock-header">Workflow preview</div>
+          <div class="mock-body">Visualization placeholder — will replace with Nano Banna images</div>
+        </div>
       </div>
     </div>
   </header>
 
   <main class="wrap">
-    <section id="features" class="grid">
-      <div class="feature"><h3>Audit</h3><p>Fast 1-week technical + ops audit.</p></div>
-      <div class="feature"><h3>Deploy</h3><p>Production-ready automations with monitoring.</p></div>
-      <div class="feature"><h3>Maintain</h3><p>Weekly improvements and priority support.</p></div>
+    <section id="features" class="features">
+      <div class="feature-card"><h3>Audit</h3><p>Fast technical & ops audit with clear fixes.</p></div>
+      <div class="feature-card"><h3>Deploy</h3><p>Production automations with tests & monitoring.</p></div>
+      <div class="feature-card"><h3>Improve</h3><p>Weekly visual & performance improvements.</p></div>
     </section>
 
     <section id="pricing" class="panel">
-      <h2>Pricing</h2>
-      <p>Setup + monthly retainer. Sample packages listed.</p>
-    </section>
-
-    <section id="testimonials" class="panel">
-      <h2>Trusted by</h2>
-      <div class="logos">Client logos here</div>
+      <h2>Packages</h2>
+      <div class="pricing-grid">
+        <div class="price"><h4>Audit</h4><p>One-off</p></div>
+        <div class="price"><h4>Deploy</h4><p>Setup + retainer</p></div>
+        <div class="price"><h4>Enterprise</h4><p>Custom</p></div>
+      </div>
     </section>
 
     <section id="contact" class="panel">
       <h2>Talk to us</h2>
-      <form name="contact">
+      <form name="contact" class="contact-form">
         <input name="name" placeholder="Your name" required />
         <input name="email" type="email" placeholder="Email" required />
-        <textarea name="message" placeholder="Project brief (one line)" required></textarea>
+        <textarea name="message" placeholder="Project brief" required></textarea>
         <button class="btn primary" type="submit">Send</button>
       </form>
     </section>
