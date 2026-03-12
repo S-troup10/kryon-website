@@ -1,0 +1,5 @@
+:root{--brand-1:#1a73e8;--brand-2:#0f6cd4;--accent:#ff6b6b;--bg:#ffffff;--text:#0b1220}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;color:var(--text);background:var(--bg)}
+.hero{padding:60px 20px;text-align:center;background:linear-gradient(180deg,var(--brand-1),var(--brand-2));color:#fff}
+.cta{display:inline-block;margin-top:16px;padding:12px 20px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none}
