@@ -1,0 +1,32 @@
+name: Capture screenshot
+
+on:
+  schedule:
+    - cron: '0 */3 * * *' # every 3 hours
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  screenshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install deps
+        run: npm ci
+      - name: Capture screenshot
+        run: npm run screenshot
+      - name: Commit screenshot
+        run: |
+          git config user.name "kryon-bot"
+          git config user.email "kryon-bot@example.com"
+          git add screenshots || true
+          git commit -m "Screenshot: $(date -u)" || echo 'no changes'
+          git push origin main || echo 'push failed'
