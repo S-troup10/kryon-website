@@ -1,15 +1,15 @@
-name: Heartbeat Status
+name: Heartbeat & Codex run
 
 on:
   schedule:
-    - cron: '*/30 * * * *'  # every 30 minutes
+    - cron: '*/15 * * * *'  # every 15 minutes
   workflow_dispatch: {}
 
 permissions:
   contents: write
 
 jobs:
-  ping:
+  ping-and-code:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,4 +22,11 @@ jobs:
           git config user.email "kryon-bot@example.com"
           git add HEARTBEAT.log || true
           git commit -m "Heartbeat: $(date -u)" || echo 'no changes'
-          git push origin main || echo 'push failed' 
+          git push origin main || echo 'push failed'
+      - name: Run codex improvement (staging)
+        run: |
+          node scripts/improve.js || echo 'improve script failed'
+          git checkout -B staging-improve
+          git add -A
+          git commit -m "Staging auto-improve (heartbeat): $(date -u)" || echo 'no changes'
+          git push --set-upstream origin staging-improve --force || echo 'push failed'
