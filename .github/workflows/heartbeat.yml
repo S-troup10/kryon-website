@@ -1,0 +1,20 @@
+name: Heartbeat Status
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'  # every 30 minutes
+  workflow_dispatch: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Write heartbeat
+        run: |
+          echo "$(date -u) — heartbeat" >> HEARTBEAT.log
+          git config user.name "kryon-bot"
+          git config user.email "kryon-bot@example.com"
+          git add HEARTBEAT.log || true
+          git commit -m "Heartbeat: $(date -u)" || echo 'no changes'
+          git push origin main || echo 'push failed' 
