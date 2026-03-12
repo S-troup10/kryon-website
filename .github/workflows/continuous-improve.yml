@@ -1,0 +1,26 @@
+name: Continuous Improve (staging)
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'   # every 30 minutes
+  workflow_dispatch: {}
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Run improvement script
+        run: node scripts/improve.js
+      - name: Commit to staging branch
+        run: |
+          git config user.name "kryon-bot"
+          git config user.email "kryon-bot@example.com"
+          git checkout -B staging-improve
+          git add -A
+          git commit -m "Staging auto-improve: $(date -u)" || echo 'no changes'
+          git push --set-upstream origin staging-improve --force

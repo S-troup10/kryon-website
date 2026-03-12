@@ -6,22 +6,19 @@ on:
   workflow_dispatch: {}
 
 jobs:
-  improve:
+  merge:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-      - name: Run improvement script
-        run: |
-          npm ci --no-audit || true
-          node scripts/improve.js
-      - name: Commit & push changes
+      - name: Merge staging into main and push
         run: |
           git config user.name "kryon-bot"
           git config user.email "kryon-bot@example.com"
-          git add -A
-          git commit -m "Auto-improve: styling tweaks (cron)" || echo 'no changes'
-          git push origin main
+          git fetch origin staging-improve || echo 'no staging branch'
+          git checkout main
+          if git rev-parse --verify origin/staging-improve >/dev/null 2>&1; then
+            git merge --no-ff origin/staging-improve -m "Merge staging improvements" || echo 'merge conflict - creating PR'
+            git push origin main || echo 'push failed'
+          else
+            echo 'no staging improvements to merge'
+          fi
