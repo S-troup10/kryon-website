@@ -3,21 +3,58 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kryon — AI workflows</title>
+  <title>Kryon — Replace manual work with AI workflows</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Kryon builds AI workflows that automate repeatable business processes — audits, deployments, and ongoing maintenance." />
 </head>
 <body>
   <header class="hero">
-    <h1>Kryon</h1>
-    <p>AI workflows that replace manual work.</p>
-    <a href="#contact" class="cta">Talk to us</a>
+    <div class="wrap">
+      <div class="hero-content">
+        <h1>Replace manual work with high-ROI AI workflows</h1>
+        <p class="lead">Audit, deploy and run automation that saves hours every week — we handle strategy, build, and handover.</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#contact">Book a call</a>
+          <a class="btn ghost" href="#pricing">View pricing</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="card">Example workflow preview</div>
+      </div>
+    </div>
   </header>
-  <main>
-    <section id="features"><h2>Features</h2></section>
-    <section id="pricing"><h2>Pricing</h2></section>
-    <section id="testimonials"><h2>Testimonials</h2></section>
-    <section id="contact"><h2>Contact</h2></section>
+
+  <main class="wrap">
+    <section id="features" class="grid">
+      <div class="feature"><h3>Audit</h3><p>Fast 1-week technical + ops audit.</p></div>
+      <div class="feature"><h3>Deploy</h3><p>Production-ready automations with monitoring.</p></div>
+      <div class="feature"><h3>Maintain</h3><p>Weekly improvements and priority support.</p></div>
+    </section>
+
+    <section id="pricing" class="panel">
+      <h2>Pricing</h2>
+      <p>Setup + monthly retainer. Sample packages listed.</p>
+    </section>
+
+    <section id="testimonials" class="panel">
+      <h2>Trusted by</h2>
+      <div class="logos">Client logos here</div>
+    </section>
+
+    <section id="contact" class="panel">
+      <h2>Talk to us</h2>
+      <form name="contact">
+        <input name="name" placeholder="Your name" required />
+        <input name="email" type="email" placeholder="Email" required />
+        <textarea name="message" placeholder="Project brief (one line)" required></textarea>
+        <button class="btn primary" type="submit">Send</button>
+      </form>
+    </section>
   </main>
-  <footer>&copy; Kryon</footer>
+
+  <footer class="site-footer">
+    <div class="wrap"><small>&copy; Kryon</small></div>
+  </footer>
 </body>
 </html>
