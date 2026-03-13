@@ -3,70 +3,66 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kryon — Replace manual work with AI workflows</title>
+  <title>Kryon — AI workflows that replace manual work</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Kryon builds AI workflows to automate repeatable business processes — audits, deployments and ongoing maintenance." />
   <link rel="stylesheet" href="styles.v1.css">
-  <meta name="description" content="Kryon builds AI workflows that automate repeatable business processes — audits, deployments, and ongoing maintenance." />
-  <style>
-    /* critical fallback styles */
-    html,body{height:100%}
-    body{background:#fff;color:#0b1220;font-family:Inter,Arial,Helvetica,sans-serif}
-  </style>
 </head>
 <body>
-  <nav class="nav">
+  <header class="nav">
     <div class="wrap nav-row">
-      <div class="logo">Kryon</div>
-      <div class="nav-links"><a href="#features">Product</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a></div>
-    </div>
-  </nav>
-
-  <header class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-left">
-        <h1>Replace manual work with AI workflows that actually run</h1>
-        <p class="lead">We audit, build and maintain production automations that cut weeks of work — shipped fast, monitored, and improved weekly.</p>
-        <div class="hero-cta">
-          <a class="btn primary" href="#contact">Book a call</a>
-          <a class="btn ghost" href="#pricing">See pricing</a>
-        </div>
-        <ul class="trust">
-          <li><strong>Fast</strong> 1-week audits</li>
-          <li><strong>Reliable</strong> production-grade</li>
-          <li><strong>Maintainable</strong> weekly improvements</li>
-        </ul>
-      </div>
-      <div class="hero-right">
-        <div class="mock-card">
-          <div class="mock-header">Workflow preview</div>
-          <div class="mock-body">Visualization placeholder — will replace with Nano Banna images</div>
-        </div>
-      </div>
+      <div class="brand">Kryon</div>
+      <nav class="links"><a href="#features">Product</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a></nav>
     </div>
   </header>
 
+  <section class="hero wrap">
+    <div class="hero-left">
+      <h1>Replace manual work with reliable AI workflows</h1>
+      <p class="sub">We audit your processes, ship production automations, and improve them weekly — saving teams time and money.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#contact">Book a call</a>
+        <a class="btn ghost" href="#pricing">See pricing</a>
+      </div>
+      <ul class="stats">
+        <li><strong>3x</strong> faster onboarding</li>
+        <li><strong>99%</strong> reliability</li>
+        <li><strong>Weekly</strong> improvements</li>
+      </ul>
+    </div>
+    <div class="hero-right">
+      <div class="screenshot">
+        <!-- placeholder graphic; Nano Banna images will replace this -->
+        <svg width="720" height="420" viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Workflow preview">
+          <rect width="720" height="420" rx="16" fill="#0b61d1" />
+          <rect x="24" y="28" width="672" height="364" rx="12" fill="#fff" opacity="0.06" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
   <main class="wrap">
     <section id="features" class="features">
-      <div class="feature-card"><h3>Audit</h3><p>Fast technical & ops audit with clear fixes.</p></div>
-      <div class="feature-card"><h3>Deploy</h3><p>Production automations with tests & monitoring.</p></div>
-      <div class="feature-card"><h3>Improve</h3><p>Weekly visual & performance improvements.</p></div>
+      <article class="card"><h3>Audit</h3><p>Fast technical + ops audit with a clear roadmap.</p></article>
+      <article class="card"><h3>Deploy</h3><p>Production-ready automations with monitoring & tests.</p></article>
+      <article class="card"><h3>Maintain</h3><p>Weekly improvements, reports and priority support.</p></article>
     </section>
 
     <section id="pricing" class="panel">
       <h2>Packages</h2>
       <div class="pricing-grid">
-        <div class="price"><h4>Audit</h4><p>One-off</p></div>
+        <div class="price"><h4>Audit</h4><p>One-week deep dive</p></div>
         <div class="price"><h4>Deploy</h4><p>Setup + retainer</p></div>
         <div class="price"><h4>Enterprise</h4><p>Custom</p></div>
       </div>
     </section>
 
-    <section id="contact" class="panel">
-      <h2>Talk to us</h2>
-      <form name="contact" class="contact-form">
-        <input name="name" placeholder="Your name" required />
-        <input name="email" type="email" placeholder="Email" required />
-        <textarea name="message" placeholder="Project brief" required></textarea>
+    <section id="contact" class="panel contact">
+      <h2>Start a project</h2>
+      <form class="contact-form">
+        <input placeholder="Name" required />
+        <input placeholder="Email" required />
+        <textarea placeholder="One-line project brief" required></textarea>
         <button class="btn primary" type="submit">Send</button>
       </form>
     </section>
