@@ -1,0 +1,25 @@
+name: Monitor automation
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # every hour
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  heartbeat-monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Append monitor timestamp
+        run: |
+          echo "$(date -u) — monitor run" >> MONITOR.log
+          git config user.name "kryon-bot"
+          git config user.email "kryon-bot@example.com"
+          git add MONITOR.log || true
+          git commit -m "Monitor: $(date -u)" || echo 'no changes'
+          git push origin main || echo 'push failed'
