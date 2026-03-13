@@ -1,0 +1,13 @@
+---
+date: 2026-03-08
+---
+
+# Daily notes — 2026-03-08
+
+- Created MEMORY.md rules: keep only concise, high-value learnings.
+- Memory files will be stored as QMD (this file).
+
+# Session log (brief)
+- User instructed to keep MEMORY.md minimal and use QMD for everything else.
+- No prior MEMORY.md existed; created starter files.
+- Key project links saved: https://github.com/Kryon-site/website, https://github.com/Kryon-site/CRM, https://www.notion.so/Kryon-31861f73917280ca9b2bd1a3d7eafcb4

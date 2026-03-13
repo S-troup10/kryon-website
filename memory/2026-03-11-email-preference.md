@@ -1,0 +1,2 @@
+[kryon] [preferred-email] [2026-03-11]
+Simon prefers emails sent to: Simon@dynk.io. Use this address any time the user says "email me" unless they specify otherwise. Treat this as contact preference for executive-facing reports; confirm before sending any external attachments or large distributions. [VERIFIED]

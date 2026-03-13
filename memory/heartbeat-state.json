@@ -1,0 +1,12 @@
+{
+  "lastChecks": {
+    "weather": 1773012840,
+    "calendar": 1773012840,
+    "email": 1773012840,
+    "github": 1772983440
+  },
+  "issues": {
+    "calendar": "Timezone 'Australia/Sydney' not supported by host/gog",
+    "github": "Missing 'notifications' scope in gh token (needs 'gh auth refresh -s notifications')"
+  }
+}
